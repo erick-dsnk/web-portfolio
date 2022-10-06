@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Centra;
+  src: url("./assets/CentraNo2-Book.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Centra;
+  src: url("./assets/CentraNo2-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Centra;
+  src: url("./assets/CentraNo2-Bold.ttf");
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: Centra, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  background-image: url(/src/assets/space-background.jpg);
+  background-size: cover;
+}
+
+.fade-in {
+  animation: fadeIn 3s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
