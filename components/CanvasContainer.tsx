@@ -30,6 +30,8 @@ export default function CanvasContainer(
             enableZoom={process.env.NEXT_PUBLIC_DEV === "true" ? true : false}
             minZoom={0.5}
             maxZoom={1.4}
+            minPolarAngle={Math.PI / 2}
+            maxPolarAngle={Math.PI / 2}
           />
     
           <directionalLight color="white" position={[0, 10, 0]} />

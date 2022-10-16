@@ -34,9 +34,6 @@ body {
   font-family: Centra, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.home {
   background-image: url("/space-background.jpg");
   background-size: cover;
 }
