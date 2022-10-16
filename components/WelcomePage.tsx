@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 type WelcomePageProps = {
   isVisible: boolean;
@@ -7,6 +7,19 @@ type WelcomePageProps = {
 
 export default function WelcomePage(props: WelcomePageProps): JSX.Element {
   const { isVisible, setIsVisible } = props;
+  const [text, setText] = useState("");
+  const [idx, setIdx] = useState(0);
+
+  const fullText = "Are you ready to take a trip through it?";
+
+  useEffect(() => {
+    if (idx < fullText.length) {
+      setTimeout(() => {
+        setText(text + fullText[idx]);
+        setIdx(idx + 1);
+      }, Math.floor(Math.random() * 200));
+    }
+  });
 
   return (
     <div
@@ -18,7 +31,7 @@ export default function WelcomePage(props: WelcomePageProps): JSX.Element {
     >
       <h1 className="title text-4xl md:text-8xl text-gray-300">
         Welcome to my mind... <br />
-        Are you ready to take a trip through it?
+        {text}
       </h1>
 
       <div
