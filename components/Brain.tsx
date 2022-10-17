@@ -24,7 +24,7 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Model(props: JSX.IntrinsicElements["group"]) {
+export default function Brain(props: JSX.IntrinsicElements["group"]) {
   //@ts-ignore
   const { nodes, materials } = useGLTF("/brain.gltf") as GLTFResult;
   return (

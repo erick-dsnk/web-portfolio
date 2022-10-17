@@ -1,21 +1,21 @@
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
-import { Model } from "./Brain";
+import Brain from "./Brain";
 
-type CanvasContainerProps = {
-  isMobile: boolean;
-};
+export default function CanvasContainer(): JSX.Element {
+  const [ isMobile, setIsMobile ] = useState(true);
 
-export default function CanvasContainer(
-  { isMobile }: CanvasContainerProps
-): JSX.Element {
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+  }, []);
+
   return (
     <div className="fade-in h-full w-full">
         <Canvas shadows={true}>
           <Suspense fallback={null}>
-            <Model />
+            <Brain />
           </Suspense>
     
           <PerspectiveCamera
